@@ -1,0 +1,44 @@
+/* ------------------------------------------------------------------
+   tokens.css — variables de design, reset et styles de base
+   Palette : noir / crème / bleu pastel sur fond béton sombre
+------------------------------------------------------------------ */
+/* Layout: bento de panneaux flottants (noir / crème / bleu) sur un fond béton sombre,
+   capitales ultra-grasses + script, animations au chargement et au survol. */
+:root{
+  --ground:#0C0D0F;
+  --ground-2:#15171A;
+  --cream:#FBF8F1;
+  --ink:#121213;
+  --ink-2:#1C1D1F;
+  --blue:#C4DAF5;
+  --blue-deep:#8FB6E8;
+  --on-cream:#121213;
+  --on-ink:#FBF8F1;
+  --muted-cream:#6F6E6A;
+  --muted-ink:#9B9C9F;
+  --radius:20px;
+  --sans:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --script:"Sacramento",cursive;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--ground);color:var(--cream);
+  font-family:var(--sans);font-size:16px;line-height:1.55;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+body::before{
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(900px 600px at 15% -5%, rgba(196,218,245,.10), transparent 60%),
+    radial-gradient(700px 500px at 95% 20%, rgba(196,218,245,.06), transparent 65%),
+    repeating-linear-gradient(42deg, rgba(255,255,255,.012) 0 2px, transparent 2px 5px);
+}
+.shell{position:relative;z-index:1;max-width:1240px;margin-inline:auto;
+  padding-left:max(14px,env(safe-area-inset-left,0px));
+  padding-right:max(14px,env(safe-area-inset-right,0px));
+  padding-block:14px 14px;display:grid;gap:14px}
+h1,h2,h3{margin:0;font-weight:900;letter-spacing:-.035em;line-height:.92;text-wrap:balance;text-transform:uppercase}
+p{margin:0}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--blue-deep);outline-offset:3px;border-radius:6px}
